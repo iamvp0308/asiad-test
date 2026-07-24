@@ -2,7 +2,7 @@
 
 import { Suspense, useMemo, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, ContactShadows, Environment, Html } from "@react-three/drei";
+import { OrbitControls, ContactShadows, Html } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { Check, RotateCcw, ShieldCheck, Smartphone, Armchair, Loader2 } from "lucide-react";
 import BikeModel, {
@@ -98,6 +98,7 @@ export default function ConfiguratorClient() {
               shadow-mapSize={[1024, 1024]}
             />
             <pointLight position={[-4, 2, -3]} intensity={0.5} color="#ff5a1f" />
+            <pointLight position={[3, -2, 4]} intensity={0.4} color="#ffffff" />
             <BikeModel
               seatColor={seatColor}
               seatMaterial={seatMaterial}
@@ -105,7 +106,6 @@ export default function ConfiguratorClient() {
               accessories={accessories}
             />
             <ContactShadows position={[0, -0.82, 0]} opacity={0.55} scale={8} blur={2.2} far={2} />
-            <Environment preset="city" />
             <OrbitControls
               enablePan={false}
               minDistance={2.8}
